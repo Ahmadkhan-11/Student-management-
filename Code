@@ -1,0 +1,54 @@
+class Student:
+	def __init__(self,name,id,semester):
+		self.name=name
+		self.id=id
+		self.semester=semester
+	def __str__(self):
+		return f"name of student is {self.name},id is {self.id} and his semester is {self.semester}"
+class Course:
+	def __init__(self,name,code,credit_hour):
+		self.name=name
+		self.code=code
+		self.credit_hour=credit_hour
+	def __str__(self):
+		return f"name of course is {self.name}, code is {self.code} and its credit hours are {self.credit_hour}"
+class Enrollment:
+	def __init__(self,student_name,course_name):
+		self.student_name=student_name
+		self.course_name=course_name
+	def __str__(self):
+		return f"student {self.student_name} enrolled in course {self.course_name}"
+
+class Student_Management_System:
+	def __init__(self):
+		self.student=[]
+		self.course=[]
+		self.enrollment=[]
+	def add_student(self,student):
+		return self.student.append(student)
+	def add_course(self,course):
+		return self.course.append(course)
+	def add_enrollment(self,enrollment):
+		 return self.enrollment.append(enrollment)
+		
+	def display_students(self):
+		for i in self.student:
+			print(i)
+	def display_courses(self):
+		for i in self.course:
+			print(i)
+	def display_enrollment(self):
+		for i in self.enrollment:
+			print(i)
+	def __str__(self):
+		return f"student {self.student} enroll in course {self.course} status is {self.enrollment}"
+student1=Student("ahmad khan",1001,3)
+course1=Course("OOP",108,3)
+enrol1=Enrollment(student1.name,course1.name)
+sms=Student_Management_System()
+sms.add_student(student1)
+sms.add_course(course1)
+sms.add_enrollment(enrol1)
+print(sms.display_enrollment())
+print(sms.display_students())
+print(sms.display_courses())
