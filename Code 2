@@ -1,0 +1,136 @@
+class Student:
+    def __init__(self, student_id, name, age, grade, email, phone_number):
+        self.student_id = student_id
+        self.name = name
+        self.age = age
+        self.grade = grade
+        self.email = email
+        self.phone_number = phone_number
+        self.courses = []
+        self.grades = {}
+
+    def add_course(self, course):
+        self.courses.append(course)
+
+    def remove_course(self, course):
+        if course in self.courses:
+            self.courses.remove(course)
+
+    def add_grade(self, course, grade):
+        self.grades[course] = grade
+
+    def display_courses(self):
+        print(f"Courses for {self.name}:")
+        for course in self.courses:
+            print(course)
+
+    def display_grades(self):
+        print(f"Grades for {self.name}:")
+        for course, grade in self.grades.items():
+            print(f"{course}: {grade}")
+
+    def __str__(self):
+        return f"Student ID: {self.student_id}, Name: {self.name}, Age: {self.age}, Grade: {self.grade}, Email: {self.email}, Phone Number: {self.phone_number}"
+class Course:
+    def __init__(self, course_id, name, credits, teacher):
+        self.course_id = course_id
+        self.name = name
+        self.credits = credits
+        self.teacher = teacher
+        self.students = []
+
+    def add_student(self, student):
+        self.students.append(student)
+
+    def remove_student(self, student):
+        if student in self.students:
+            self.students.remove(student)
+
+    def display_students(self):
+        print(f"Students in {self.name}:")
+        for student in self.students:
+            print(student)
+
+    def __str__(self):
+        return f"Course ID: {self.course_id}, Name: {self.name}, Credits: {self.credits}, Teacher: {self.teacher.name}"
+class Teacher:
+    def __init__(self, teacher_id, name, subject):
+        self.teacher_id = teacher_id
+        self.name = name
+        self.subject = subject
+        self.courses = []
+
+    def add_course(self, course):
+        self.courses.append(course)
+
+    def remove_course(self, course):
+        if course in self.courses:
+            self.courses.remove(course)
+
+    def display_courses(self):
+        print(f"Courses taught by {self.name}:")
+        for course in self.courses:
+            print(course)
+
+    def __str__(self):
+        return f"Teacher ID: {self.teacher_id}, Name: {self.name}, Subject: {self.subject}"
+class StudentManagementSystem:
+    def __init__(self):
+        self.students = []
+        self.courses = []
+        self.teachers = []
+
+    def add_student(self, student):
+        self.students.append(student)
+
+    def add_course(self, course):
+        self.courses.append(course)
+
+    def add_teacher(self, teacher):
+        self.teachers.append(teacher)
+
+    def display_students(self):
+        print("Students:")
+        for student in self.students:
+            print(student)
+
+    def display_courses(self):
+        print("Courses:")
+        for course in self.courses:
+            print(course)
+
+    def display_teachers(self):
+        print("Teachers:")
+        for teacher in self.teachers:
+            print(teacher)
+
+def main():
+    sms = StudentManagementSystem()
+
+    # Create students
+    student1 = Student(1, "John Doe", 20, 90, "john@example.com", "123-456-7890")
+    student2 = Student(2, "Jane Doe", 22, 95, "jane@example.com", "987-654-3210")
+
+    # Create courses
+    course1 = Course(1, "Mathematics", 3, Teacher(1, "Mr. Smith", "Mathematics"))
+    course2 = Course(2, "Science", 4, Teacher(2, "Ms. Johnson", "Science"))
+
+    # Create teachers
+    teacher1 = Teacher(1, "Mr. Smith", "Mathematics")
+    teacher2 = Teacher(2, "Ms. Johnson", "Science")
+
+    # Add students, courses, and teachers to the system
+    sms.add_student(student1)
+    sms.add_student(student2)
+    sms.add_course(course1)
+    sms.add_course(course2)
+    sms.add_teacher(teacher1)
+    sms.add_teacher(teacher2)
+
+    # Display students, courses, and teachers
+    sms.display_students()
+    sms.display_courses()
+    sms.display_teachers()
+
+    # Add courses to students
+    student1.add_course(course1
