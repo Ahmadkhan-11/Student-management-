@@ -133,4 +133,4 @@ def main():
     sms.display_teachers()
 
     # Add courses to students
-    student1.add_course(course1
+    student1.add_course(course1)
