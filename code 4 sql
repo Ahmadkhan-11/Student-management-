@@ -37,16 +37,16 @@ CREATE TABLE Grades (
 );
 
 INSERT INTO Students (name, email, phone_number) VALUES
-(' Liam Gentry', 'lima@example.com', '1234567890'),
-(' Lyric Glass', 'lyric@example.com', '0987654321');
+(' ahmad khan', 'ahmad@example.com', '1234567890'),
+(' abdullah khan', 'abdullah@example.com', '0987654321');
 
 INSERT INTO Teachers (name, email) VALUES
-(' Aiden Nichols', 'alice@example.com'),
-(' Beau Booth', 'beau@example.com');
+(' umer', 'umer@example.com'),
+(' fatir', 'fatir@example.com');
 
 INSERT INTO Courses (course_name, teacher_id) VALUES
 ('Mathematics', 1),
-('Physics', 2);	
+('Physics', 2);        
 
 INSERT INTO Courses (course_name, teacher_id) VALUES
 ('Mathematics', 1),
@@ -59,4 +59,5 @@ INSERT INTO Enrollments (student_id, course_id) VALUES
 INSERT INTO Grades (student_id, course_id, grade) VALUES
 (1, 1, 'A'), -- Student 1 gets grade 'A' in Course 1
 (2, 2, 'B'); -- Student 2 gets grade 'B' in Course 2
+select * from students;
 
