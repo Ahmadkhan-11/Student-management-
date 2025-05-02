@@ -59,5 +59,11 @@ INSERT INTO Enrollments (student_id, course_id) VALUES
 INSERT INTO Grades (student_id, course_id, grade) VALUES
 (1, 1, 'A'), -- Student 1 gets grade 'A' in Course 1
 (2, 2, 'B'); -- Student 2 gets grade 'B' in Course 2
-
-
+select * from students;
+select * from students
+inner join Enrollments
+on Students.student_id=Enrollments.student_id;
+select * from courses where course_name="Physics";
+select * from grades order by student_id DESC;
+select * from students limit 2;
+select distinct * from students;
